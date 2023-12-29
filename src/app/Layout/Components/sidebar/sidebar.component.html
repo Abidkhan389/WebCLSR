@@ -1,0 +1,191 @@
+<div [class]="'app-sidebar sidebar-shadow ' + (config$ | async).sidebarTheme" (mouseover)="sidebarHoverMouseIn()"
+  (mouseout)="sidebarHoverMouseOut()">
+  <div class="app-header__logo" style="background-color: black !important;">
+    <!-- <div class="logo-src"></div> -->
+    <div class="clsr-logo"></div>
+    <div class="header__pane ms-auto">
+      <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+        [ngClass]="{'is-active' : globals.toggleSidebar}" (click)="toggleSidebar();">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <!-- <div class="app-sidebar-content" style="background: linear-gradient(to bottom, #fff 50%, #ccc 100%);"> -->
+  <div class="app-sidebar-content" style="background-color: black !important;">
+    <div class="app-sidebar-scroll">
+      <perfect-scrollbar [autoPropagation]="true" class="scroll-container" [config]="config" [scrollIndicators]="true"
+        style="max-width: 600px; max-height: 690px;">
+        <div class="v-sidebar-menu vsm-default">
+          <div class="vsm-list">
+            <ngb-accordion [destroyOnHide]="false" [closeOthers]="true" #acc="ngbAccordion"
+              activeIds="{{extraParameter}}">
+              <ngb-panel>
+                <ng-template ngbPanelHeader>
+                  <div class="vsm-header">Main Navigation</div>
+                </ng-template>
+              </ngb-panel>
+              <!--User Dashboard  -->
+              <ngb-panel id="dashboards">
+                <ng-template ngbPanelHeader>
+                  <button class="vsm-link" routerLink="/main/dashboard" [routerLinkActiveOptions]="{exact: true}">
+                    <span class="vsm-icon material-icons">
+                      dashboard
+                    </span>
+                    <span class="vsm-title">Dashboard</span>
+                  </button>
+                </ng-template>
+              </ngb-panel>
+              <!-- user management  -->
+              <ngb-panel id="dashboards">
+                <ng-template ngbPanelHeader>
+                  <button class="vsm-link" routerLink="/main/Management" [routerLinkActiveOptions]="{exact: true}">
+                    <span class="vsm-icon material-icons">
+                      manage_accounts
+                    </span>
+                    <span class="vsm-title">User Management</span>
+                  </button>
+                </ng-template>
+              </ngb-panel>
+              <!-- user Subscriptions & bundles module  -->
+              <ngb-panel id="dashboards">
+                <ng-template ngbPanelHeader>
+                  <button class="vsm-link" routerLink="/main/Assessment" [routerLinkActiveOptions]="{exact: true}">
+                    <span class="vsm-icon material-icons">
+                      subscriptions
+                    </span>
+                    <span class="vsm-title">Subscriptions & bundles</span>
+                  </button>
+                </ng-template>
+              </ngb-panel>
+              <!-- user Setting  -->
+              <ngb-panel id="dashboards">
+                <ng-template ngbPanelHeader>
+                  <button class="vsm-link" routerLink="/main/setting" [routerLinkActiveOptions]="{exact: true}">
+                    <span class="vsm-icon material-icons">
+                      settings
+                    </span>
+                    <span class="vsm-title">Setting</span>
+                  </button>
+                </ng-template>
+              </ngb-panel>
+              <!-- user Reports  -->
+              <ngb-panel id="dashboards">
+                <ng-template ngbPanelHeader>
+                  <button class="vsm-link" routerLink="/main/Assessment" [routerLinkActiveOptions]="{exact: true}">
+                    <span class="vsm-icon material-icons">
+                      description
+                    </span>
+                    <span class="vsm-title">Reports</span>
+                  </button>
+                </ng-template>
+              </ngb-panel>
+              <!-- user Content Management  -->
+              <ngb-panel id="dashboards">
+                <ng-template ngbPanelHeader>
+                  <button class="vsm-link" routerLink="/main/contentManagement"
+                    [routerLinkActiveOptions]="{exact: true}">
+                    <span class="vsm-icon material-icons">
+                      work
+                    </span>
+                    <span class="vsm-title">Content Management</span>
+                  </button>
+                </ng-template>
+              </ngb-panel>
+              <!-- user Complent & Issue  -->
+              <ngb-panel id="dashboards">
+                <ng-template ngbPanelHeader>
+                  <button class="vsm-link" routerLink="/main/Assessment" [routerLinkActiveOptions]="{exact: true}">
+                    <span class="vsm-icon material-icons">
+                      bug_reports
+                    </span>
+                    <span class="vsm-title">Complaints & Issues</span>
+                  </button>
+                </ng-template>
+              </ngb-panel>
+
+
+              <!-- <ngb-panel id="pagesMenu">
+                <ng-template ngbPanelHeader>
+                  <button ngbPanelToggle class="vsm-link">
+                    <i class="vsm-icon pe-7s-browser"></i>
+                    <span class="vsm-title">Pages</span>
+                    <i class="vsm-arrow"></i>
+                  </button>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                  <div class="vsm-dropdown">
+                    <div class="vsm-list">
+                      <div class="vsm-item">
+                        <a routerLinkActive="active-item" routerLink="/pages/login" class="vsm-link">
+                          <span class="vsm-title">Login</span>
+                        </a>
+                      </div>
+                      <div class="vsm-item">
+                        <a routerLinkActive="active-item" routerLink="/pages/login-boxed" class="vsm-link">
+                          <span class="vsm-title">Login Boxed</span>
+                        </a>
+                      </div>
+                      <div class="vsm-item">
+                        <a routerLinkActive="active-item" routerLink="/pages/register" class="vsm-link">
+                          <span class="vsm-title">Register</span>
+                        </a>
+                      </div>
+                      <div class="vsm-item">
+                        <a routerLinkActive="active-item" routerLink="/pages/register-boxed" class="vsm-link">
+                          <span class="vsm-title">Register Boxed</span>
+                        </a>
+                      </div>
+                      <div class="vsm-item">
+                        <a routerLinkActive="active-item" routerLink="/pages/forgot-password" class="vsm-link">
+                          <span class="vsm-title">Forgot Password</span>
+                        </a>
+                      </div>
+                      <div class="vsm-item">
+                        <a routerLinkActive="active-item" routerLink="/pages/forgot-password-boxed" class="vsm-link">
+                          <span class="vsm-title">Forgot Password Boxed</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-panel> -->
+              <!-- <ngb-panel id="apps">
+                <ng-template ngbPanelHeader>
+                  <button ngbPanelToggle class="vsm-link">
+                    <i class="vsm-icon pe-7s-plugin"></i>
+                    <span class="vsm-title">Applications</span>
+                    <i class="vsm-arrow"></i>
+                  </button>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                  <div class="vsm-dropdown">
+                    <div class="vsm-list">
+                      <div class="vsm-item">
+                        <a routerLinkActive="active-item" routerLink="/apps/mailbox" class="vsm-link">
+                          <span class="vsm-title">Mailbox</span>
+                        </a>
+                      </div>
+                      <div class="vsm-item">
+                        <a routerLinkActive="active-item" routerLink="/apps/chat" class="vsm-link">
+                          <span class="vsm-title">Chat</span>
+                        </a>
+                      </div>
+                      <div class="vsm-item">
+                        <a routerLinkActive="active-item" routerLink="/apps/material-tabs" class="vsm-link">
+                          <span class="vsm-title">Material Tabs</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-panel> -->
+
+            </ngb-accordion>
+          </div>
+        </div>
+      </perfect-scrollbar>
+    </div>
+  </div>
+</div>

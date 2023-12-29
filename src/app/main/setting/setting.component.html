@@ -1,0 +1,136 @@
+<div class="row mt-2">
+    <div class="col-lg-2 col-md-2 col-sm-12 col-12 animate__animated animate__zoomIn">
+
+        <button class="btn btn-success mt-2 " type="submit" (click)="ResetPassword()">
+            Password Setting
+        </button>
+    </div>
+    <div class="col-lg-7 col-md-7 col-sm-12 col-12 mb-3 animate__animated animate__zoomIn">
+        <div class="card" style="border-radius: 15px;">
+            <div class="card-border">
+                <div class="card-header">
+                    Password Setting
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="resetpasswordForm" (ngSubmit)="Submit()">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-12 passwordsettinginputwidth">
+                                <div class="form-group">
+                                    <label class="profile-lable" for="firstName">Old Password</label>
+                                    <input type="password" placeholder="*******" class="form-control"
+                                        formControlName="OldPassword">
+                                    <div
+                                        *ngIf="resetpasswordForm.controls['OldPassword'].touched && !resetpasswordForm.controls['OldPassword'].valid">
+                                        <div *ngFor="let validation of validationMessages.value" class="has-danger">
+                                            <span class="form-control-feedback"
+                                                *ngIf="resetpasswordForm.controls['OldPassword'].hasError(validation.type) ">
+                                                {{validation.message}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-12 passwordsettinginputwidth">
+                                <label class="profile-lable" for="password">New Password</label>
+                                <input type="password" placeholder="*******" class="form-control"
+                                    formControlName="password">
+                                <div
+                                    *ngIf="resetpasswordForm.controls['password'].touched && !resetpasswordForm.controls['password'].valid">
+                                    <div *ngFor="let validation of validationMessages.value" class="has-danger">
+                                        <span class="form-control-feedback"
+                                            *ngIf="resetpasswordForm.controls['password'].hasError(validation.type) ">
+                                            {{validation.message}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-12 passwordsettinginputwidth">
+                                <div class="form-group">
+                                    <label class="profile-lable" for="confirmPassword">Confirm Password</label>
+                                    <input type="password" placeholder="*******" class="form-control"
+                                        formControlName="confirmPassword">
+                                    <div
+                                        *ngIf="resetpasswordForm.controls['confirmPassword'].touched && !resetpasswordForm.controls['confirmPassword'].valid">
+                                        <div *ngFor="let validation of validationMessages.value" class="has-danger">
+                                            <span class="form-control-feedback"
+                                                *ngIf="resetpasswordForm.controls['confirmPassword'].hasError(validation.type) ">
+                                                {{validation.message}}
+                                            </span>
+                                        </div>
+                                        <div *ngIf="resetpasswordForm.errors?.notSame">Passwords do not match.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <hr class="sb-line-2" style="margin:10px 0px">
+                        </div>
+                        <span>
+                            <button type="submit" class="btn btn-success profile-button" style="float: right;
+                                 margin-bottom: 5px;" [disabled]="!resetpasswordForm.valid">Change Password</button>
+                            <!-- <button class="btn btn-raised btn-primary profile-button" type="submit" style="float: right;
+                                 margin-bottom: 5px;" [disabled]="!resetpasswordForm.valid">
+                            Update Password
+                        </button> -->
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+        <div class="card" style="border-radius: 8px;">
+            <div class="card-body" style="background-color: #f8f8f8ec;">
+                <div class="mt-3 mb-4 text-center">
+                    <img src="../../../assets/images/users/avator2.png" width="100" class="rounded-circle">
+                </div>
+                <p class="profile-lable">Complete Your Profile</p>
+                <div class="row">
+                    <div class="col-10">
+                        <ngb-progressbar type="success" [value]=55></ngb-progressbar>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                        <span class="percent-text"><b>55%</b></span>
+                    </div>
+
+                </div>
+                <h5 style="color: #00c444; margin-top: 20px;">Profile</h5>
+                <h5 style="margin-top: 20px;">ABOUT</h5>
+                <div class="row mt-3">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <i class="fa fa-user" style="color: #00c444; padding-right: 5px;"></i> UserName
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <i class="fa fa-home" style="color: #00c444; padding-right: 5px;"></i>
+                        Address
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <i class="fa fa-id-card" style="color: #00c444; padding-right: 5px;"></i>
+                        USerCnic
+                    </div>
+                </div>
+
+                <h5 style="margin-top: 20px;">CONTACT</h5>
+                <div class="row mt-3">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <i class="fa fa-phone" style="color: #00c444; padding-right: 5px;"></i>MobileNumber
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <hr class="sb-line-2" style="margin:10px 0px">
+                </div>
+                <div class="" style="text-align-last: center;">
+                    <button routerLink="/main/editprofile" class="btn btn-success srch-btn">Edit
+                        Profile</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

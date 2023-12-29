@@ -1,0 +1,101 @@
+<div class="modal-header mb-0 p-3">
+    <h4 class="modal-title text-bold-500 font-medium-1">{{data.IsReadOnly? "View" :data.userId?"Update":"Add"}}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeClick()">
+    </button>
+</div>
+<form [formGroup]="UserForm" (ngSubmit)="AddEditSubmit()">
+    <div class="modal-body" style="max-height:70vh;overflow:auto">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 " >
+                <mat-form-field appearance="outline" style="width: inherit" >
+                    <mat-label>Full Name</mat-label>
+                    <input matInput placeholder="Enter Name" formControlName="fullName">
+                    <mat-error
+                      *ngIf="UserForm.controls['fullName'].touched && !UserForm.controls['fullName'].valid">
+                      <mat-error *ngFor="let validation of validationMessages.value">
+                        <mat-error *ngIf="UserForm.controls['fullName'].hasError(validation.type) ">
+                          {{validation.message}}
+                        </mat-error>
+                      </mat-error>
+                    </mat-error>
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 " style="padding:0px 15px;">
+                <mat-form-field appearance="outline" style="width: inherit">
+                    <mat-label>Email</mat-label>
+                    <input matInput  placeholder="Ex. pat@example.com" formControlName="email">
+                    <mat-error
+                      *ngIf="UserForm.controls['email'].touched && !UserForm.controls['email'].valid">
+                      <mat-error *ngFor="let validation of validationMessages.value">
+                        <mat-error *ngIf="UserForm.controls['email'].hasError(validation.type) ">
+                          {{validation.message}}
+                        </mat-error>
+                      </mat-error>
+                    </mat-error>
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="form-section">
+                <div class="col-12 text-bold-400"><h5>User Info</h5></div>
+                <div class="col-12 float-right">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4 " style="padding:0px 15px;">
+                <mat-form-field appearance="outline" style="display: block;">
+                    <mat-label>age</mat-label>
+                    <input matInput  placeholder="XXX" formControlName="age">
+                    <mat-error
+                      *ngIf="UserForm.controls['age'].touched && !UserForm.controls['age'].valid">
+                      <mat-error *ngFor="let validation of validationMessages.value">
+                        <mat-error *ngIf="UserForm.controls['age'].hasError(validation.type) ">
+                          {{validation.message}}
+                        </mat-error>
+                      </mat-error>
+                    </mat-error>
+                  </mat-form-field>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4 " style="padding:0px 15px;">
+                <mat-form-field appearance="outline" style="display: block;">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput  placeholder="XXXXX" formControlName="phoneNumber">
+                    <mat-error
+                      *ngIf="UserForm.controls['phoneNumber'].touched && !UserForm.controls['phoneNumber'].valid">
+                      <mat-error *ngFor="let validation of validationMessages.mobileLength">
+                        <mat-error *ngIf="UserForm.controls['phoneNumber'].hasError(validation.type) ">
+                          {{validation.message}}
+                        </mat-error>
+                      </mat-error>
+                    </mat-error>
+                  </mat-form-field>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-4 mt-2" style="padding:0px 15px;">
+                <div class="form-field">
+                    <!-- <label [ngStyle]="{color: isreadOnly? 'grey': 'black'}">Select Course</label> -->
+                    <ng-select class="font-small-1" [items]="genderType" bindLabel="name" bindValue="id"
+                      placeholder="Choose Gender" formControlName="gender" [clearable]="true" [searchable]="true">
+                    </ng-select>
+                    <div *ngIf="UserForm.controls['gender'].touched && !UserForm.controls['gender'].valid">
+                      <div *ngFor="let validation of validationMessages.value" class="has-danger mt-2">
+                        <span class="form-control-feedback" *ngIf="UserForm.controls['gender'].hasError(validation.type) ">
+                          {{validation.message}}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer mb-0 p-2">
+        <button class="btn btn-raised btn-secondary me-1 " type="button" [disabled]="loading" (click)="closeClick()">
+            <i class="fa fa-close"></i> Cancel
+        </button>
+        <button class="btn btn-raised button-box-shadow btn-primary" type="submit" [disabled]="!UserForm.valid">
+            <i class="fa fa-check-square-o"></i> {{data.IsReadOnly? "View" :data.userId?"Update":"Add"}}
+        </button>
+    </div>
+</form>

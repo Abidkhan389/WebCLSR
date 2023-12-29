@@ -1,0 +1,197 @@
+<div class="d-flex">
+  <div class="header-btn-lg pe-0">
+    <div class="widget-content p-0">
+      <div class="widget-content-wrapper">
+        <div class="widget-content-left ms-3 header-user-info" >
+          <!-- <div class="widget-heading">Robert Murdoch 1</div>
+          <div class="widget-subheading">Angular Developer</div> -->
+                 
+                        <nav>
+                            <ul class="navbar-nav justify-content-end align-items-center " >
+                                <!-- Messages Dropdown -->
+                                <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="messagesDropdown" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="fa fa-comments fa-2x msg-noti-icon-colour" aria-hidden="true"></i>
+                                        <sup class="badge badge-danger navbar-badge position-relative"
+                                            style="    top: -11px">3</sup>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="messagesDropdown">
+                                        <li *ngFor="let item of userdetailsmsgsnotifications?.messages; let i = index"
+                                            [ngStyle]="i < 2 ? {'border-bottom': '1px solid #dfdfdf'} : {}">
+                                            <div class="media custom-dropdown-item" *ngIf="i < 2">
+                                                <img src="../../../assets/images/users/user1-128x128.jpg" alt="User Avatar"
+                                                    class="img-size-50 mr-3 img-circle msg-img">
+                                                <div class="media-body">
+                                                    <h3 class="dropdown-item-title">
+                                                        {{item?.senderName}}
+                                                        <span
+                                                            class="vsm-icon material-icons float-right text-sm text-danger">star</span>
+                                                    </h3>
+                                                    <p class="text-sm">{{item?.message}}</p>
+                                                    <p class="text-sm text-muted d-flex align-items-center">
+                                                        <span class="vsm-icon material-icons mr-1">schedule</span>
+                                                        {{item?.time}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <button class="dropdown-item dropdown-footer justify-content-center"  routerLink="/main/messages" >
+                                                See All Messages
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </li> -->
+        
+                                <!-- Notifications Dropdown -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="notificationsDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="material-icons msg-noti-icon-colour" style="font-size: 2.1em;">notifications</span>
+                                        <sup class="badge badge-danger navbar-badge position-relative"
+                                            style="    top: -11px">3</sup>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationsDropdown">
+                                        <li>
+                                            <div
+                                                class="custom-dropdown-item  notifications-inline notification-border-style notification-div-height notification-head">
+                                                <span class="custom-dropdown-item   ">15 notifications</span>
+                                            </div>
+                                            <div
+                                                class="custom-dropdown-item  notifications-inline notification-border-style notification-div-height">
+                                                <span class="material-icons notification-usernotifi">chat</span>
+                                                <span
+                                                    class="notification-usernotifi">Testing Purpose</span>
+                                                <span class="float-right text-sm ml-auto notication-time"><span
+                                                        class="vsm-icon material-icons mr-1 notification-time-style">schedule</span>
+                                                    3 min</span>
+                                            </div>
+                                            <div
+                                                class="custom-dropdown-item  notifications-inline notification-border-style notification-div-height">
+                                                <span class="material-icons notification-usernotifi mr-1">person_add</span>
+                                                <span
+                                                    class="notification-usernotifi">Testing Purpose</span>
+                                                <span class="float-right text-sm ml-auto notication-time"><span
+                                                        class="vsm-icon material-icons mr-1 notification-time-style">schedule</span>
+                                                    3 min</span>
+                                            </div>
+                                            <div
+                                                class="custom-dropdown-item  notifications-inline notification-border-style notification-div-height">
+                                                <span class="material-icons notification-usernotifi">note</span>
+                                                <span
+                                                    class="notification-usernotifi">Testing Purpose</span>
+        
+                                                <span class="float-right text-sm ml-auto notication-time"><span
+                                                        class="vsm-icon material-icons mr-1 notification-time-style">schedule</span>
+                                                    3 min</span>
+                                            </div>
+                                            <!-- <a class="dropdown-item dropdown-footer justify-content-center"
+                                                    [routerLink]="['/main/profile/', userdetailsmsgsnotifications.id]">
+                                                    See All Notifications
+                                                </a> -->
+                                                <button class="dropdown-item dropdown-footer justify-content-center"  routerLink="/main/notifications" >
+                                                    See All Notifications
+                                                </button>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                   
+        </div>
+        <div class="widget-content-left">
+          <div class="btn-group" ngbDropdown>
+            <button type="button" class="btn btn-link p-0 me-2" ngbDropdownToggle>
+              <span>
+                <div class="icon-wrapper icon-wrapper-alt rounded-circle text-center">
+                  <p class="text-muted mb-0">Angular<br>Developer</p>
+                </div>
+              </span>
+            </button>
+            <div class="dropdown-menu-lg " ngbDropdownMenu > 
+              <div class="dropdown-menu-header">
+                <div class="dropdown-menu-header-inner bg-info">
+                  <div class="menu-header-image opacity-2 dd-header-bg-6"></div>
+                  <div class="menu-header-content text-start">
+                    <div class="widget-content p-0">
+                      <div class="widget-content-wrapper">
+                        <div class="widget-content-left me-3">
+                          <img width="42" src="./assets/images/avatars/1.jpg" alt="" class="rounded-circle">
+                        </div>
+                        <div class="widget-content-left">
+                          <div class="widget-heading">Robert Murdoch</div>
+                          <div class="widget-subheading opacity-8">A short profile description</div>
+                        </div>
+                        <div class="widget-content-right me-2">
+                          <button class="btn-pill btn-shadow btn-shine btn btn-focus" (click)="Logout()">Logout</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="scroll-area-xs">
+                <perfect-scrollbar [autoPropagation]="true">
+                  <ul class="nav flex-column">
+                    <li class="nav-item-header nav-item">Activity</li>
+                    <li class="nav-item"><a [routerLink]="" class="user-box-chat-color">Chat
+                        <div class="ms-auto badge rounded-pill bg-info">8</div>
+                      </a></li>
+                    <li class="nav-item"><a [routerLink]="" class="user-box-chat-color">Recover Password</a></li>
+                    <li class="nav-item-header nav-item">My Account</li>
+                    <li class="nav-item"><a [routerLink]="" class="nav-link">Settings
+                        <div class="ms-auto badge bg-success">New</div>
+                      </a></li>
+                    <li class="nav-item"><a [routerLink]="" class="nav-link">Messages
+                        <div class="ms-auto badge bg-warning">512</div>
+                      </a></li>
+                    <li class="nav-item"><a [routerLink]="" class="nav-link">Logs</a></li>
+                  </ul>
+                </perfect-scrollbar>
+              </div>
+              <ul class="nav flex-column">
+                <li class="nav-item-divider mb-0 nav-item"></li>
+              </ul>
+              <div class="grid-menu grid-menu-2col overflow-hidden">
+                <div class="g-0 row">
+                  <div class="col-sm-6">
+                    <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning">
+                      <i class="pe-7s-chat icon-gradient bg-amy-crisp btn-icon-wrapper mb-2"></i>
+                      Message Inbox
+                    </button>
+                  </div>
+                  <div class="col-sm-6">
+                    <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-danger">
+                      <i class="pe-7s-ticket icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
+                      <b>Suppor Tickets</b>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ul class="nav flex-column">
+                <li class="nav-item-divider nav-item"></li>
+                <li class="nav-item-btn text-center nav-item">
+                  <button class="btn-wide btn btn-primary btn-sm">Open Messages</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+       
+        <!-- <div class="widget-content-right header-user-info " style="margin-left: 5px;">
+          <button type="button" class="btn btn-shadow p-1 btn-info btn-sm" placement="bottom"
+            ngbTooltip="Tooltip Example!">
+            <fa-icon [icon]="faCalendar" class="me-1 ms-1"></fa-icon>
+          </button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <!-- <div class="header-btn-lg">
+    <button type="button" class="hamburger hamburger--elastic" [ngClass]="{'is-active' : globals.toggleDrawer}"
+      (click)="toggleDrawer()">
+      <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+    </button>
+  </div> -->
+</div>
